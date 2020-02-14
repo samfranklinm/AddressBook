@@ -1,4 +1,6 @@
 package addressBook;
+
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -20,12 +22,12 @@ public class SaveAndLoad {
   }
 
   // Function to save Address Book
-  public void save(Person[] contacts) {
+  public void save(ArrayList<Person> contacts) {
 
     try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-      for (int i = 0; i < contacts.length; i++) {
-        writer.write("First Name: " + contacts[i].getFirstName() + "\n" + "Last Name: " + contacts[i].getLastName() + "\n"
-            + "Phone Number: " + contacts[i].getPhoneNumber() + "\nAddress: " + contacts[i].getAddress() + "\n\n");
+      for (int i = 0; i < contacts.size(); i++) {
+        writer.write("First Name: " + contacts.get(i).getFirstName() + "\n" + "Last Name: " + contacts.get(i).getLastName() + "\n"
+            + "Phone Number: " + contacts.get(i).getPhoneNumber() + "\nAddress: " + contacts.get(i).getAddress().toString() + "\n\n");
       }
 
     } catch (IOException e) {
