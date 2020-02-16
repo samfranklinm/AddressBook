@@ -9,7 +9,7 @@ class AddressBook  {
 	ArrayList<Person> contacts = new ArrayList<Person>();
 	//  Person[] contacts = new Person[100];
 	int index = 0;
-	SaveAndLoad databaseFile = new SaveAndLoad("Database.txt");
+	SaveAndLoad databaseFile = new SaveAndLoad("Database.csv");
 
 
 	//Function to add contact to the Address Book
@@ -199,7 +199,7 @@ class AddressBook  {
 
 	// Function to search for the contact to delete and update contact
 	public int binarySearch(ArrayList<Person> contacts, String firstName) {
-		int first = 0, last = contacts.size();
+		int first = 0, last = contacts.size() - 1;
 
 		while (first <= last) {
 			int middle = (first + last) / 2;
