@@ -25,7 +25,6 @@ class Main {
     System.out.println("4. List added contacts A-Z");
     System.out.println("5. Load up Address Book (Loads up saved Address Book only)");
     System.out.println("6. Look up a contact");
-    System.out.println("7. Save And Quit (No changes will be saved otherwise)");
     Scanner scan = new Scanner(System.in);
     return scan.nextInt();
   }
@@ -39,12 +38,15 @@ class Main {
       switch (choice) {
       case 1:
         ab.addContact();
+        ab.saveAddressBook();
         break;
       case 2:
         ab.updateContact();
+        ab.saveAddressBook();
         break;
       case 3:
         ab.deleteContact();
+        ab.saveAddressBook();
         break;
       case 4:
         ab.printAddressBook();
@@ -54,9 +56,6 @@ class Main {
         break;
       case 6:
         ab.searchContact();
-        break;
-      case 7:
-        ab.saveAndExit();
         break;
       }
 

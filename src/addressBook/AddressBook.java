@@ -219,7 +219,7 @@ class AddressBook  {
 	}
 
 	// Function to save the AddressBook before exiting
-	public void saveAndExit() {
+	public void saveAddressBook() {
 		try {
 			databaseFile.save(contacts); // save the Address Book before exiting
 			System.out.println("Saving contacts and changes into database. . .");
@@ -227,7 +227,7 @@ class AddressBook  {
 		} catch (Exception ie) {
 			System.out.println("Saved file. Goodbye!");
 		}
-		System.exit(0);
+		//System.exit(0); do not exit
 	}
 
 	// Function to load the AddressBook after saving if user desires
