@@ -1,6 +1,6 @@
 package addressBook;
 
-public class LocalContacts extends Person {
+public class LocalContacts extends Person implements LocalOrInternational{
 
 	private String status;
 
@@ -11,14 +11,16 @@ public class LocalContacts extends Person {
 		this.status = status;
 	}
 
-	// status setter
-	public void setStatus (String status) {
-		this.status = status;	
-	}
 
-	// status getter
+	@Override
 	public String getStatus() {
 		status = "(Local)";
 		return status;
+	}
+
+	@Override
+	public void setStatus() {
+		String status = null;
+		this.status = status;
 	}
 }

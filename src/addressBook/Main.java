@@ -1,7 +1,10 @@
 package addressBook;
 
-
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
 
 class Main {
@@ -30,23 +33,35 @@ class Main {
   }
 
   public static void main(String[] args) throws IOException {
+	  
+	  try {
+		  Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/addressdb", "root", "samfranklinm");
+		  Statement myStatement = myConn.createStatement();
+		  ResultSet myRS = myStatement.executeQuery("SELECT * from persons");
+		  
+		  while (myRS.next()) {
+			  System.out.println(myRS.getString("lastName") + ", " + myRS.getString("firstName"));
+		  }
+	  }catch(Exception exc){
+		 exc.printStackTrace();
+	  }
 
     AddressBook ab = new AddressBook();
-
+    
     do {
       choice = menu();
       switch (choice) {
       case 1:
         ab.addContact();
-        ab.saveAddressBook();
+       // ab.saveAddressBook();
         break;
       case 2:
         ab.updateContact();
-        ab.saveAddressBook();
+       // ab.saveAddressBook();
         break;
       case 3:
         ab.deleteContact();
-        ab.saveAddressBook();
+       // ab.saveAddressBook();
         break;
       case 4:
         ab.printAddressBook();
