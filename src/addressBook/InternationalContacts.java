@@ -13,7 +13,7 @@ public class InternationalContacts extends Person implements LocalOrInternationa
 
 	@Override
 	public String getStatus() {
-		status = "International";
+		status = "(International)";
 		return status;
 	}
 
