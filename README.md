@@ -15,9 +15,9 @@ There are no automated tests as of right now.
 Soon to come! 
 
 ## Built With
-- The webservice portion of the project is using 
+- The WebService portion of the project is using 
 [Maven](https://maven.apache.org/) - Dependency Management 
-- Apache Tomcat Plugin
+- Apache Tomcat Maven Plugin
 
 ## What's to come
 
