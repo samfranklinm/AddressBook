@@ -1,5 +1,6 @@
 package addressBook;
 
+import addressBook.Address;
 
 class Person extends Address{
 	  private String firstName;

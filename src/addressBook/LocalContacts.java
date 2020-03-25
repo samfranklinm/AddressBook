@@ -1,14 +1,22 @@
 package addressBook;
 
-public class LocalContacts extends Person implements LocalOrInternational{
+import addressBook.Address;
+import com.addressBook.rest.LocalOrInternational;
+import addressBook.Person;
 
+public class LocalContacts extends Person implements LocalOrInternational{
+	
+	Address ad = new Address();
+	
 	private String status;
+	private String address;
 
 	public LocalContacts(){};
 
-	public LocalContacts(String firstName, String lastName, String phoneNumber, String status) {
+	public LocalContacts(String firstName, String lastName, String phoneNumber, String address, String status) {
 		super(firstName, lastName, phoneNumber);
 		this.status = status;
+		this.address = ad.getAddress();
 	}
 
 
@@ -24,3 +32,4 @@ public class LocalContacts extends Person implements LocalOrInternational{
 		this.status = status;
 	}
 }
+
