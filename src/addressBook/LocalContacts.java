@@ -1,7 +1,8 @@
 package addressBook;
 
 import addressBook.Address;
-import com.addressBook.rest.LocalOrInternational;
+
+import addressBook.LocalOrInternational;
 import addressBook.Person;
 
 public class LocalContacts extends Person implements LocalOrInternational{
